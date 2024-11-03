@@ -23,9 +23,9 @@ CMake module to enable sanitizers for binary targets.
 
 %install
 rm -rf $RPM_BUILD_ROOT
-install -d $RPM_BUILD_ROOT%{_datadir}/cmake/Sanitizers
+install -d $RPM_BUILD_ROOT%{_datadir}/cmake/Modules
 
-cp -p cmake/* $RPM_BUILD_ROOT%{_datadir}/cmake/Sanitizers
+cp -p cmake/* $RPM_BUILD_ROOT%{_datadir}/cmake/Modules
 
 %clean
 rm -rf $RPM_BUILD_ROOT
@@ -33,6 +33,5 @@ rm -rf $RPM_BUILD_ROOT
 %files
 %defattr(644,root,root,755)
 %doc LICENSE README.md
-%dir %{_datadir}/cmake/Sanitizers
-%{_datadir}/cmake/Sanitizers/*.cmake
-%attr(755, root, root) %{_datadir}/cmake/Sanitizers/asan-wrapper
+%{_datadir}/cmake/Modules/*.cmake
+%attr(755, root, root) %{_datadir}/cmake/Modules/asan-wrapper
